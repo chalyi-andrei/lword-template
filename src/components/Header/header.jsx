@@ -76,13 +76,13 @@ const Header = () => (
 							<a class="nav-item" href="">
 								О нас
 							</a>
-							<a class="nav-item" href="">
+							<a class="nav-item nav-item__active" href="">
 								Проповеди
 							</a>
 							<a class="nav-item" href="">
 								Служения
 							</a>
-							<a class="nav-item nav-item__active" href="">
+							<a class="nav-item" href="">
 								Фото
 							</a>
 							<a class="nav-item" href="">

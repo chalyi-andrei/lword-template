@@ -1,6 +1,7 @@
-import authorImg from '../../img/Author.png';
+import './FilterByAutor.scss';
+import authorImg from '../../img/Autor.png';
 
-export const FilterByAuthor = () => {
+const FilterByAuthor = () => {
 	return (
 		<div class="container">
 			<div class="autor-block">
@@ -56,3 +57,5 @@ export const FilterByAuthor = () => {
 		</div>
 	);
 };
+
+export default FilterByAuthor;
