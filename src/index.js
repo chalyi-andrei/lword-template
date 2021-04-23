@@ -4,7 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { Route, Switch } from 'react-router-dom';
 
 import Layout from './components/Layout/layout'; // Header + Footer
-import SermoonPage from './pages/Sermons/Sermons';
+import SermoonsPage from './pages/Sermons/Sermons';
+import SermoonByIDPage from './pages/SermonByID/SermonByID';
 import FilterByAuthorPage from './pages/FilterByAutor/FilterByAutor';
 import './index.scss';
 
@@ -14,8 +15,9 @@ ReactDOM.render(
 			<Switch>
 				<Route>
 					<Layout>
-						<Route path="/" component={SermoonPage} exact />
-						<Route path="/by-author" component={FilterByAuthorPage} exact />
+						<Route path="/" component={SermoonsPage} exact />
+						<Route path="/sermoons/:id" component={SermoonByIDPage} exact />
+						<Route path="/author" component={FilterByAuthorPage} exact />
 					</Layout>
 				</Route>
 			</Switch>

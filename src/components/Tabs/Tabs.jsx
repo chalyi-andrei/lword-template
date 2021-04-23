@@ -1,25 +1,25 @@
+import { Link } from 'react-router-dom';
 import './Tabs.scss';
 
 const Tabs = () => (
 	<div class="tabs-container">
 		<div class="tabs-block">
-			<h3 class="tabs-title">Выбрать Проповеди</h3>
 			<div class="tabs-navigation">
-				<button title="Последние" class="tabs-navigation__item">
+				<Link title="Последние" class="tabs-navigation__item" to="/">
 					Последние
-				</button>
-				<button title="По книге" class="tabs-navigation__item tab-item--active">
+				</Link>
+				<Link title="По книге" class="tabs-navigation__item tab-item--active" to="books">
 					По книге
-				</button>
-				<button title="По темам" class="tabs-navigation__item">
+				</Link>
+				<Link title="По темам" class="tabs-navigation__item" to="themes">
 					По темам
-				</button>
-				<button title="Серии" class="tabs-navigation__item">
+				</Link>
+				<Link title="Серии" class="tabs-navigation__item" to="/series">
 					Серии
-				</button>
-				<button title="По автору" class="tabs-navigation__item">
+				</Link>
+				<Link title="По автору" class="tabs-navigation__item" to="/author">
 					По автору
-				</button>
+				</Link>
 			</div>
 		</div>
 	</div>

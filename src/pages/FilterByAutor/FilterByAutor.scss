@@ -1,83 +1,89 @@
-@import "../../scss/variable.scss";
+@import '../../scss/variable.scss';
 
 .autor-block {
-  max-width: 980px;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  
-  @media screen and (max-width: $tablet) {
-    padding: 0px 20px;
-  }
+	max-width: 980px;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	padding-top: 10px;
+	padding-bottom: 40px;
 
-  @media screen and (max-width: 500px) {
-    flex-wrap: nowrap;
-    overflow: auto;
-  }
+	@media screen and (max-width: $tablet) {
+		padding: 40px 20px;
+	}
 
-  &__item {
-    width: 50%;
-    display: flex;
-    margin-bottom: 40px;
+	@media screen and (max-width: 500px) {
+		flex-wrap: nowrap;
+		overflow: auto;
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
 
-    @media screen and (max-width: $tablet) {
-      width: 100%;
-      margin-bottom: 0px;
-    }
+	&__item {
+		width: 50%;
+		display: flex;
+		margin-bottom: 40px;
 
-    @media screen and (max-width: 500px) {
-      flex-direction: column;
-      max-width: 200px;
-      margin-right: 40px;
-    }
-  }
+		@media screen and (max-width: $tablet) {
+			width: 100%;
+			margin-bottom: 0px;
+		}
 
-  .autor-avatar {
-    img {
-      height: 324px;
-      width: 200px;
-      object-fit: cover;
-    }
+		@media screen and (max-width: 500px) {
+			flex-direction: column;
+			max-width: 200px;
+			margin-right: 40px;
+		}
+	}
 
-    @media screen and (max-width: $tablet) {
-      img {
-        height: 200px;
-      }
-    }
-  }
+	.autor-avatar {
+		img {
+			height: 324px;
+			width: 200px;
+			object-fit: cover;
+		}
 
-  .autor-description-block {
-    padding-left: 24px;
+		@media screen and (max-width: $tablet) {
+			img {
+				height: 200px;
+			}
+		}
+	}
 
-    &__title {
-      font-family: SourceSansPro;
-      font-weight: 600;
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
+	.autor-description-block {
+		padding-left: 24px;
 
-    &__desc {
-      font-family: SourceSansPro;
-      font-weight: normal;
-      font-size: 16px;
-      margin-bottom: 16px;
-    }
-  }
+		&__title {
+			font-family: SourceSansPro;
+			font-weight: 600;
+			font-size: 20px;
+			margin-bottom: 10px;
+		}
 
-  .button {
-    border: none;
-    outline: none;
-    height: 38px;
-    width: 130px;
-    color: $color-white;
-    font-family: SourceSansPro;
-    font-size: 16px;
-    text-align: center;
-    border-radius: 4px;
-    background-color: $color-aquamarine;
+		&__desc {
+			font-family: SourceSansPro;
+			font-weight: normal;
+			font-size: 16px;
+			margin-bottom: 16px;
+		}
+	}
 
-    &:hover {
-      cursor: pointer;
-    }
-  }
+	.button {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 38px;
+		width: 130px;
+		color: $color-white;
+		font-family: SourceSansPro;
+		font-size: 16px;
+		text-align: center;
+		border-radius: 4px;
+		background-color: $color-aquamarine;
+
+		&:hover {
+			cursor: pointer;
+			background-color: lighten($color-aquamarine, 2);
+		}
+	}
 }
