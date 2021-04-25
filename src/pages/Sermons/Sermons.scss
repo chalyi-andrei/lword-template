@@ -1,98 +1,89 @@
-@import '../../scss/variable.scss';
+@import "../../scss/variable.scss";
 
 .sermons-page {
-	padding-top: 40px;
-	padding-bottom: 60px;
+  padding-bottom: 60px;
 
-	.wrapper {
-		width: 100%;
-		max-width: 980px;
-		display: flex;
-		justify-content: center;
-		flex-direction: column;
-		align-items: center;
-		margin: 0 auto;
-	}
+  .wrapper {
+    width: 100%;
+    max-width: 980px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
 
-	.sermons-title {
-		font-family: 'Philosopher-Bold';
-		font-size: 28px;
-		margin-bottom: 10px;
-		text-align: center;
-	}
+  .sermons-block {
+    margin-bottom: 80px;
+    width: 100%;
 
-	.sermons-block {
-		margin-top: 35px;
-		margin-bottom: 80px;
-		width: 100%;
+    .sermons-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
 
-		.sermons-list {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-evenly;
+      .sermons-list-item {
+        max-width: 306px;
+        margin: 10px;
+        color: $color-grey;
+        text-decoration: none;
 
-			.sermons-list-item {
-				max-width: 306px;
-				margin: 10px;
-				color: $color-grey;
-				text-decoration: none;
+        &__image {
+          width: 306px;
+          height: 177px;
+        }
 
-				&__image {
-					width: 306px;
-					height: 177px;
-				}
+        &__title {
+          font-family: "SourceSansPro-Bold";
+          color: $color-grey;
+          font-size: 20px;
+          padding-right: 26px;
+        }
 
-				&__title {
-					font-family: 'SourceSansPro-Bold';
-					color: $color-grey;
-					font-size: 20px;
-					padding-right: 26px;
-				}
+        &__date {
+          font-family: "SourceSansPro";
+          font-size: 16px;
+        }
+      }
+    }
 
-				&__date {
-					font-family: 'SourceSansPro';
-					font-size: 16px;
-				}
-			}
-		}
+    .return-to-sermons-list {
+      margin-top: 68px;
+      margin-bottom: 48px;
+      text-align: center;
 
-		.return-to-sermons-list {
-			margin-top: 68px;
-			margin-bottom: 80px;
-			text-align: center;
+      .title {
+        font-family: "SourceSansPro-Bold";
+        color: $color-black;
+        font-size: 20px;
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
 
-			.title {
-				font-family: 'SourceSansPro-Bold';
-				color: $color-black;
-				font-size: 20px;
-				position: relative;
-				display: inline-block;
-				cursor: pointer;
+        &:after {
+          content: "";
+          width: 100%;
+          height: 3px;
+          position: absolute;
+          left: 0px;
+          bottom: -6px;
+          border-top: 2px solid $color-black;
+        }
 
-				&:after {
-					content: '';
-					width: 100%;
-					height: 3px;
-					position: absolute;
-					left: 0px;
-					bottom: -6px;
-					border-top: 2px solid $color-black;
-				}
+        &:hover {
+          color: $color-aquamarine;
+          &:after {
+            border-color: $color-aquamarine;
+          }
+        }
 
-				&:hover {
-					color: $color-aquamarine;
-					&:after {
-						border-color: $color-aquamarine;
-					}
-				}
-
-				@media screen and (max-width: $tablet) {
-					color: $color-aquamarine;
-					&:after {
-						border-top: 2px solid $color-aquamarine;
-					}
-				}
-			}
-		}
-	}
+        @media screen and (max-width: $tablet) {
+          color: $color-aquamarine;
+          &:after {
+            border-top: 2px solid $color-aquamarine;
+          }
+        }
+      }
+    }
+  }
 }

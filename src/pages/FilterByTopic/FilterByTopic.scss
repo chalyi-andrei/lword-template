@@ -1,0 +1,39 @@
+@import "../../scss/variable.scss";
+
+.topic-page {
+  .wrapper {
+    max-width: 980px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 91px;
+
+    .topic-list {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+
+      &__item {
+        display: flex;
+        flex-direction: column;
+        width: 184px;
+
+        .item-title {
+          font-family: "SourceSansPro-Bold";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 20px;
+          color: $color-grey;
+        }
+
+        .item-sub-title {
+          font-family: "SourceSansPro";
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          color: $color-black;
+        }
+      }
+    }
+  }
+}
