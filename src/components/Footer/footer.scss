@@ -13,6 +13,9 @@
 
 	.footer-content {
 		margin-top: 32px;
+		&:first-child{
+			width: 50%;
+		}
 	}
 
 	.footer-content__title {
@@ -58,14 +61,10 @@
 	}
 }
 
-@media screen and (min-width: $desktop) {
+@media screen and (min-width: $tablet) {
 	.footer {
 		.footer-content {
 			margin-top: 43px;
-		}
-
-		.footer-content:first-child {
-			width: 50%;
 		}
 
 		.footer-content__title {

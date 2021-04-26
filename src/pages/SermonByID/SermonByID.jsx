@@ -1,10 +1,10 @@
 import "./SermonByID.scss";
 import bgImg from "../../img/background-sermon.png";
 
-const SermoonsPage = () => {
+const SermonsPage = () => {
   return (
-    <div className="container sermon-page">
-      <div className="wrapper">
+      <div className="sermon-page">
+      <div className="wrapper" >
         <div className="content-block">
           <div className="iframe-block">
             <iframe
@@ -47,7 +47,7 @@ const SermoonsPage = () => {
             Божьей. Для этого Бог даровал нам четыре средства: молитву, Свое
             Слово, подчинение Своему промыслу и служение собратьев-верующих...
           </div>
-          <div className="action-block">
+          <div className="action-block  ">
             <div className="action-block__item--next">Читать далее</div>
             <div className="action-block__item">
               <svg
@@ -193,4 +193,4 @@ const SermoonsPage = () => {
   );
 };
 
-export default SermoonsPage;
+export default SermonsPage;

@@ -18,8 +18,11 @@
 	}
 }
 
-.tabs-container {
-	padding: 0 0 0 21px;
+
+@media screen and (max-width: $tablet) {
+	.tabs-container {
+		padding: 0 0 0 21px;
+	}
 }
 
 .tabs-block {
@@ -48,7 +51,7 @@
 		line-height: 25.2px;
 		overflow-x: scroll;
 		width: 100%;
-		max-width: 980px;
+		max-width: 964px;
 		font-family: SourceSansPro;
 		&::after {
 			display: block;

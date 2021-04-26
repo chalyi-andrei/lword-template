@@ -13,7 +13,7 @@ const Footer = () => (
 				<p className="footer-content__title">Богослужения</p>
 				<p className="footer-content__info">Воскресенье в 11:00</p>
 				<address className="footer-content__info">
-					Харьков, ул. Плехановская 65. Cтадион Металлист, конференц зал 2й этаж.
+					Харьков, ул. Плехановская 65. <br/>Cтадион Металлист, конференц зал 2й этаж.
 				</address>
 			</div>
 			<div className="footer-content">
