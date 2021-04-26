@@ -19,13 +19,14 @@
 }
 
 .tabs-container {
-	padding: 0 21px;
+	padding: 0 0 0 21px;
 }
 
 .tabs-block {
 	text-align: center;
 	width: 100%;
 	position: relative;
+	margin-top: 30px;
 
 	.tabs-title {
 		font-family: 'Philosopher';
@@ -40,11 +41,10 @@
 		position: relative;
 		margin: 26px auto 15px;
 		display: flex;
-		justify-content: center;
+		justify-content: flex-start;
 		white-space: nowrap;
 		font-family: 'Source Sans Pro';
 		font-weight: 400;
-		font-size: 16px;
 		line-height: 25.2px;
 		overflow-x: scroll;
 		width: 100%;
@@ -63,7 +63,7 @@
 
 		&__item {
 			margin-bottom: 12px;
-			margin-right: 48px;
+			margin-right: 32px;
 			position: relative;
 			cursor: pointer;
 			padding: 0;
@@ -72,6 +72,7 @@
 			color: inherit;
 			background-color: transparent;
 			outline: none;
+			font-size: 18px;
 
 			&:focus {
 				@include active;
@@ -89,6 +90,7 @@
 
 			&:last-child {
 				margin-right: 0;
+				padding-right: 25px;
 			}
 		}
 	}
@@ -106,10 +108,12 @@
 
 @media screen and (min-width: $tablet) {
 	.tabs-block {
+		margin-top: 50px;
 		margin-bottom: 30px;
 
 		.tabs-navigation {
 			margin-top: 32px;
+			justify-content: center;
 		}
 
 		.tabs-navigation__item {
@@ -120,6 +124,12 @@
 
 @media screen and (min-width: $desktop) {
 	.tabs-block {
-		margin-top: 64px;
+		margin-top: 50px;
+
+		.tabs-navigation {
+			&__item {
+				font-size: 16px;
+			}
+		}
 	}
 }

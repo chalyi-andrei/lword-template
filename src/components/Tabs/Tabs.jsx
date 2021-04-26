@@ -6,10 +6,10 @@ const Tabs = () => (
 		<div className="tabs-block">
 			<div className="tabs-title">Выбрать Проповеди</div>
 			<div className="tabs-navigation">
-				<Link title="Последние" className="tabs-navigation__item" to="/">
+				<Link title="Последние" className="tabs-navigation__item tab-item--active" to="/">
 					Последние
 				</Link>
-				<Link title="По книге" className="tabs-navigation__item tab-item--active" to="/book">
+				<Link title="По книге" className="tabs-navigation__item" to="/book">
 					По книге
 				</Link>
 				<Link title="По темам" className="tabs-navigation__item" to="/topic">
