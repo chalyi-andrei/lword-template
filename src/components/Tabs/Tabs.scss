@@ -18,8 +18,10 @@
 	}
 }
 
-.tabs-container {
-	padding: 0 0 0 21px;
+@media screen and (max-width: $tablet) {
+	.tabs-container {
+		padding: 0 0 0 21px;
+	}
 }
 
 .tabs-block {
@@ -48,7 +50,7 @@
 		line-height: 25.2px;
 		overflow-x: scroll;
 		width: 100%;
-		max-width: 980px;
+		max-width: 964px;
 		font-family: SourceSansPro;
 		&::after {
 			display: block;
@@ -108,11 +110,11 @@
 
 @media screen and (min-width: $tablet) {
 	.tabs-block {
-		margin-top: 50px;
-		margin-bottom: 30px;
+		margin-top: 59px;
+		margin-bottom: 25px;
 
 		.tabs-navigation {
-			margin-top: 32px;
+			margin-top: 29px;
 			justify-content: center;
 		}
 
@@ -124,7 +126,7 @@
 
 @media screen and (min-width: $desktop) {
 	.tabs-block {
-		margin-top: 50px;
+		margin-top: 59px;
 
 		.tabs-navigation {
 			&__item {
