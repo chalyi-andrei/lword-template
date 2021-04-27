@@ -1,37 +1,244 @@
 @import "../../scss/variable.scss";
 
+@keyframes close-accordion {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.3);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: rotate(45deg);
+    opacity: 1;
+  }
+}
+
+@keyframes open-accordion {
+  0% {
+    transform: rotate(45deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.3);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@mixin accordion-after {
+  top: 9px;
+  left: 0px;
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: $color-grey;
+}
+
+@mixin accordion-before {
+  top: 0;
+  left: 9px;
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 2px;
+  background-color: $color-grey;
+}
+
 .topic-page {
   .wrapper {
-    max-width: 980px;
+    padding: 0 20px;
+    width: calc(100% - 40px);
+    margin: 0 auto;
+  }
+  .topic-list {
+    margin-top: -15px; // fix:  remove margin-bottom from tabs
+  }
+  .item-accordion {
+    position: relative;
     width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-    margin-bottom: 91px;
+    flex-wrap: wrap;
+  }
 
-    .topic-list {
+  .toggle-container {
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .button-toggle {
+    position: relative;
+    &::after {
+      animation: open-accordion 0.5s forwards alternate;
+      @include accordion-after;
+    }
+
+    &::before {
+      animation: open-accordion 0.5s forwards alternate;
+      @include accordion-before;
+    }
+  }
+
+  .button-toggle__clone {
+    display: block;
+    visibility: visible;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    transition: visibility 0.5s, opacity 1.5s ease-in;
+
+    &::after {
+      @include accordion-after;
+    }
+    &::before {
+      @include accordion-before;
+    }
+  }
+  .topic-list {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    position: relative;
+
+    &-part {
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: 0.3s;
+      transition: all 0.15s ease-out;
+    }
+
+    &__item {
       display: flex;
-      justify-content: space-evenly;
+      width: 100%;
       flex-wrap: wrap;
+      padding-left: 0;
 
-      &__item {
-        display: flex;
-        flex-direction: column;
-        width: 184px;
-
+      &:last-child {
         .item-title {
-          font-family: "SourceSansPro-Bold";
-          font-style: normal;
-          font-weight: 600;
-          font-size: 20px;
-          color: $color-grey;
+          margin-bottom: -11px;
+        }
+      }
+
+      .item-title {
+        padding: 26px 0;
+        box-shadow: inset 0px -1px 0px rgba(73, 72, 72, 0.2);
+        width: 100%;
+        display: block;
+        font-family: "SourceSansPro-Bold";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        color: $color-grey;
+        margin-bottom: 2px;
+      }
+
+      .item-sub-title {
+        display: block;
+        font-family: "SourceSansPro";
+        font-size: 20px;
+        line-height: 34px;
+        color: $color-grey-light-100;
+        margin-bottom: 16px;
+        line-height: 140%;
+
+        &.active {
+          color: $color-black;
+          text-decoration-line: underline;
         }
 
+        &:last-child {
+          margin-bottom: 0;
+          padding-bottom: 40px;
+          box-shadow: inset 0px -1px 0px rgba(73, 72, 72, 0.2);
+        }
+      }
+    }
+  }
+
+  // checkbox
+  .toggle {
+    display: none;
+  }
+
+  // styles for open accordion
+  .toggle:checked {
+    & ~ .item-accordion {
+      .button-toggle {
+        &::before {
+          animation: close-accordion 0.5s forwards;
+        }
+        &::after {
+          animation: close-accordion 0.5s forwards;
+        }
+      }
+
+      .button-toggle__clone {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s, opacity 0.5s ease-in;
+      }
+
+      .item-title {
+        margin-bottom: 16px;
+        transition: 0.5s;
+      }
+
+      .topic-list-part {
+        margin-top: 0;
+        min-height: 40px;
+        max-height: 100%;
+        height: 100%;
+        transition: all 0.25s ease-in;
+        opacity: 1;
+      }
+
+      &:last-child .topic-list-part .item-sub-title:last-child {
+        margin-bottom: -11px !important;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $tablet) {
+  .topic-page {
+    .topic-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .button-toggle,
+    .button-toggle__clone {
+      display: none;
+    }
+    .topic-list__item {
+      width: 33%;
+    }
+
+    .item-accordion {
+      .item-title {
+        box-shadow: none;
+      }
+
+      .topic-list-part {
+        max-height: 100%;
+        height: 100%;
+        transition: none;
+        opacity: 1;
+
         .item-sub-title {
-          font-family: "SourceSansPro";
-          font-style: normal;
-          font-weight: normal;
-          font-size: 16px;
-          color: $color-black;
+          box-shadow: none;
         }
       }
     }

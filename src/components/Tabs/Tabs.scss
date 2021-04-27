@@ -1,135 +1,135 @@
-@import '../../scss/variable.scss';
+@import "../../scss/variable.scss";
 
 @mixin active {
-	position: relative;
-	font-weight: 600;
-	color: $color-aquamarine;
-	transition: all 0.2s;
-	overflow: visible;
+  position: relative;
+  font-weight: 600;
+  color: $color-aquamarine;
+  transition: all 0.2s;
+  overflow: visible;
 
-	&:after {
-		content: '';
-		position: absolute;
-		bottom: -12px;
-		left: 0;
-		height: 1px;
-		width: 100%;
-		background: $color-aquamarine;
-	}
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background: $color-aquamarine;
+  }
 }
 
 .tabs-container {
-	padding: 0 0 0 21px;
+  padding: 0 0 0 21px;
 }
 
 .tabs-block {
-	text-align: center;
-	width: 100%;
-	position: relative;
-	margin-top: 30px;
+  text-align: center;
+  width: 100%;
+  position: relative;
+  margin-top: 30px;
 
-	.tabs-title {
-		font-family: 'Philosopher';
-		font-weight: 700;
-		line-height: 39.2px;
-		font-size: 28px;
-		color: $color-black;
-		text-align: center;
-	}
+  .tabs-title {
+    font-family: "Philosopher";
+    font-weight: 700;
+    line-height: 39.2px;
+    font-size: 28px;
+    color: $color-black;
+    text-align: center;
+  }
 
-	.tabs-navigation {
-		position: relative;
-		margin: 26px auto 15px;
-		display: flex;
-		justify-content: flex-start;
-		white-space: nowrap;
-		font-family: 'Source Sans Pro';
-		font-weight: 400;
-		line-height: 25.2px;
-		overflow-x: scroll;
-		width: 100%;
-		max-width: 980px;
-		font-family: SourceSansPro;
-		&::after {
-			display: block;
-			content: ' ';
-			position: absolute;
-			z-index: 12;
-			max-width: 980px;
-			width: 100%;
-		}
-		// * bottom line
-		box-shadow: inset 0px -1px 0px 0px $color-gray-50;
+  .tabs-navigation {
+    position: relative;
+    margin: 26px auto 15px;
+    display: flex;
+    justify-content: flex-start;
+    white-space: nowrap;
+    font-family: "Source Sans Pro";
+    font-weight: 400;
+    line-height: 25.2px;
+    overflow-x: scroll;
+    width: 100%;
+    max-width: 980px;
+    font-family: SourceSansPro;
+    &::after {
+      display: block;
+      content: " ";
+      position: absolute;
+      z-index: 12;
+      max-width: 980px;
+      width: 100%;
+    }
+    // * bottom line
+    box-shadow: inset 0px -1px 0px 0px $color-gray-50;
 
-		&__item {
-			margin-bottom: 12px;
-			margin-right: 32px;
-			position: relative;
-			cursor: pointer;
-			padding: 0;
-			border: none;
-			font: inherit;
-			color: inherit;
-			background-color: transparent;
-			outline: none;
-			font-size: 18px;
+    &__item {
+      margin-bottom: 12px;
+      margin-right: 32px;
+      position: relative;
+      cursor: pointer;
+      padding: 0;
+      border: none;
+      font: inherit;
+      color: inherit;
+      background-color: transparent;
+      outline: none;
+      font-size: 18px;
 
-			&:focus {
-				@include active;
-			}
+      &:focus {
+        @include active;
+      }
 
-			// * fix for font-weight
-			&:before {
-				display: block;
-				content: attr(title);
-				font-weight: 600;
-				height: 0;
-				overflow: hidden;
-				visibility: hidden;
-			}
+      // * fix for font-weight
+      &:before {
+        display: block;
+        content: attr(title);
+        font-weight: 600;
+        height: 0;
+        overflow: hidden;
+        visibility: hidden;
+      }
 
-			&:last-child {
-				margin-right: 0;
-				padding-right: 25px;
-			}
-		}
-	}
+      &:last-child {
+        margin-right: 0;
+        padding-right: 25px;
+      }
+    }
+  }
 
-	.tab-item--active {
-		@include active;
-	}
+  .tab-item--active {
+    @include active;
+  }
 
-	// * hide scroll
-	::-webkit-scrollbar {
-		width: 0;
-		height: 0;
-	}
+  // * hide scroll
+  ::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
 }
 
 @media screen and (min-width: $tablet) {
-	.tabs-block {
-		margin-top: 50px;
-		margin-bottom: 30px;
+  .tabs-block {
+    margin-top: 50px;
+    margin-bottom: 30px;
 
-		.tabs-navigation {
-			margin-top: 32px;
-			justify-content: center;
-		}
+    .tabs-navigation {
+      margin-top: 32px;
+      justify-content: center;
+    }
 
-		.tabs-navigation__item {
-			margin-right: 39px;
-		}
-	}
+    .tabs-navigation__item {
+      margin-right: 39px;
+    }
+  }
 }
 
 @media screen and (min-width: $desktop) {
-	.tabs-block {
-		margin-top: 50px;
+  .tabs-block {
+    margin-top: 50px;
 
-		.tabs-navigation {
-			&__item {
-				font-size: 16px;
-			}
-		}
-	}
+    .tabs-navigation {
+      &__item {
+        font-size: 16px;
+      }
+    }
+  }
 }
