@@ -27,7 +27,8 @@
 		}
 
 		&__item {
-			width: 50%;
+			width: calc(50% - 20px);
+			margin-left: 10px;
 			display: flex;
 			margin-bottom: 40px;
 
@@ -37,9 +38,14 @@
 			}
 
 			@media screen and (max-width: 500px) {
+				margin-left: 0;
 				flex-direction: column;
 				max-width: 200px;
 				margin-right: 40px;
+
+				&:last-of-type {
+					padding-right: 25px;
+				}
 			}
 		}
 
