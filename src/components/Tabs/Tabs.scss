@@ -18,7 +18,6 @@
 	}
 }
 
-
 @media screen and (max-width: $tablet) {
 	.tabs-container {
 		padding: 0 0 0 21px;
@@ -111,11 +110,11 @@
 
 @media screen and (min-width: $tablet) {
 	.tabs-block {
-		margin-top: 50px;
-		margin-bottom: 30px;
+		margin-top: 59px;
+		margin-bottom: 25px;
 
 		.tabs-navigation {
-			margin-top: 32px;
+			margin-top: 29px;
 			justify-content: center;
 		}
 
@@ -127,7 +126,7 @@
 
 @media screen and (min-width: $desktop) {
 	.tabs-block {
-		margin-top: 50px;
+		margin-top: 59px;
 
 		.tabs-navigation {
 			&__item {

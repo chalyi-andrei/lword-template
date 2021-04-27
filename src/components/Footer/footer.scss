@@ -13,8 +13,13 @@
 
 	.footer-content {
 		margin-top: 32px;
-		&:first-child{
+
+		&:first-child {
 			width: 50%;
+			padding-right: 14px;
+		}
+		&:nth-of-type(2) {
+			padding-right: 20px;
 		}
 	}
 
