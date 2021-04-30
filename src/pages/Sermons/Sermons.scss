@@ -26,6 +26,7 @@
 			.sermons-list-item {
 				max-width: 306px;
 				margin: 10px;
+				margin-bottom: 29px;
 				color: $color-grey;
 				text-decoration: none;
 
@@ -39,6 +40,8 @@
 					color: $color-grey;
 					font-size: 20px;
 					padding-right: 26px;
+					margin-top: 2px;
+					margin-bottom: 3px;
 				}
 
 				&__date {
