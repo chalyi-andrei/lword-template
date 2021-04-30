@@ -205,7 +205,7 @@
       }
 
       &:last-child .topic-list-part .item-sub-title:last-child {
-        margin-bottom: -11px !important;
+        margin-bottom: 3px;
       }
     }
   }
@@ -216,13 +216,18 @@
     .topic-list {
       column-count: 3;
       display: block;
-
-      .topic-list__item {
+      margin-top: 40px;
+      &__item {
         display: block;
         width: 184px;
         margin: 0 auto;
         break-inside: avoid;
         page-break-inside: avoid;
+        &:last-child {
+          .item-title {
+            margin-bottom: 0;
+          }
+        }
       }
     }
 
