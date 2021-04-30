@@ -214,21 +214,29 @@
 @media screen and (min-width: $tablet) {
   .topic-page {
     .topic-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      column-count: 3;
+      display: block;
+
+      .topic-list__item {
+        display: block;
+        width: 184px;
+        margin: 0 auto;
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
     }
 
     .button-toggle,
     .button-toggle__clone {
       display: none;
     }
-    .topic-list__item {
-      width: 33%;
-    }
 
     .item-accordion {
       .item-title {
         box-shadow: none;
+        padding: 0;
+        margin-bottom: 8px;
+        margin: 0;
       }
 
       .topic-list-part {
@@ -239,6 +247,13 @@
 
         .item-sub-title {
           box-shadow: none;
+          font-size: 16px;
+          margin: 0;
+          margin-top: 6px;
+
+          &:last-child {
+            padding-bottom: 45px;
+          }
         }
       }
     }
