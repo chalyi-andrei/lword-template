@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import './FilterByAutor.scss';
 import authorImg from '../../img/Autor.png';
-import igorImg from '../../img/igor.png';
+import igorImg from '../../img/igor.jpg';
 import denisImg from '../../img/denis.jpeg';
 import artemImg from '../../img/artem.jpeg';
 import genrihImg from '../../img/genrih.jpeg';
